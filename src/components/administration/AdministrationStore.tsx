@@ -1,7 +1,7 @@
 import { observable, action } from 'mobx'
 
 class AdministrationStore {
-    @observable temperature: number = 0;
+    @observable temperature: number = 22;
 
     @action increaseTemp() {
         this.temperature++;
