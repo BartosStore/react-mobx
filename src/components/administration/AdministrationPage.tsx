@@ -11,6 +11,11 @@ class AdministrationStore {
         console.log(this.temperature);
     }
 
+    @action decreaseTemp() {
+        this.temperature--;
+        console.log(this.temperature);
+    }
+
     get temp() {
         return this.temperature;
     }
@@ -26,6 +31,7 @@ const AdministrationPage = () => {
             <div className="Form">
                 <Observer>{() => <div>{store.temp}</div>}</Observer>
                 <button className="Btn" onClick={() => store.increaseTemp()}>Increase</button>
+                <button className="Btn" onClick={() => store.decreaseTemp()}>Decrease</button>
             </div>
         </div>
     )
