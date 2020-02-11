@@ -22,7 +22,7 @@ const App = () => {
             <Dashboard />
           </Route>
           <Route path="/admin">
-            <AdministrationPage />
+            <AdministrationPage /> 
           </Route>
         </Switch>
       </Router>
