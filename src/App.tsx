@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
-import Administration from "./components/Administration";
+import Administration from "./components/administration/Administration";
 import './App.css';
 
 const App = () => {
