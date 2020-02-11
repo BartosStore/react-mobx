@@ -1,27 +1,9 @@
 import React from "react";
-import { observable, action } from 'mobx'
 import { Observer } from "mobx-react"
+import { administrationStore } from "./AdministrationStore";
 import './../../App.css';
 
-class AdministrationStore {
-    @observable temperature: number = 0;
-
-    @action increaseTemp() {
-        this.temperature++;
-        console.log(this.temperature);
-    }
-
-    @action decreaseTemp() {
-        this.temperature--;
-        console.log(this.temperature);
-    }
-
-    get temp() {
-        return this.temperature;
-    }
-}
-
-const store = new AdministrationStore();
+const store = administrationStore;
 
 const AdministrationPage = () => {
     // const store = new AdministrationStore();
