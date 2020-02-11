@@ -7,27 +7,25 @@ import './App.css';
 const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <Router>
-          <ul>
-            <li>
-              <Link to="/">Dasboard</Link>
-            </li>
-            <li>
-              <Link to="/admin">Administration</Link>
-            </li>
-          </ul>
+      <Router>
+        <ul className="App-ul">
+          <li>
+            <Link to="/">Dashboard</Link>
+          </li>
+          <li>
+            <Link to="/admin">Administration</Link>
+          </li>
+        </ul>
 
-          <Switch>
-            <Route exact path="/">
-              <Dashboard />
-            </Route>
-            <Route path="/admin">
-              <Administration />
-            </Route>
-          </Switch>
-        </Router>
-      </header>
+        <Switch>
+          <Route exact path="/">
+            <Dashboard />
+          </Route>
+          <Route path="/admin">
+            <Administration />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
