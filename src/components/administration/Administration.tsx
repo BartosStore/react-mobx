@@ -1,7 +1,7 @@
 import React from "react";
 import './../../App.css';
 
-const Administration = () => {
+const AdministrationPage = () => {
     return (
         <div className="App">
             <h2>Administration</h2>
@@ -9,4 +9,4 @@ const Administration = () => {
     )
 }
 
-export default Administration;
+export default AdministrationPage;
