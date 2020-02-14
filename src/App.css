@@ -25,7 +25,8 @@
 .App li a {
   color: black;
   text-align: center;
-  padding: 1px 16px 1px 16px;
+  padding: 0px 16px 0px 16px;
+  display: block;
   text-decoration: none;
 }
 
