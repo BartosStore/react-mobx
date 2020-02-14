@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  background-color: #f2f4f7;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -16,23 +15,22 @@
 .App-ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  background-color: silver;
 }
 
 .App-ul li {
-  display: inline;
+  float: left;
 }
 
 .App li a {
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  color: black;
+  text-align: center;
+  padding: 1px 16px 1px 16px;
+  text-decoration: none;
 }
 
 .App li a:hover {
-  color: navy;
-  text-decoration: underline;
+  background-color: aliceblue;
 }
 
 .App-link {

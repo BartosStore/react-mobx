@@ -1,7 +1,9 @@
 import React from "react";
 import { Observer } from "mobx-react"
+
 import { administrationStore } from "./AdministrationStore";
-import './../../App.css';
+import { Button } from "reactstrap";
+// import './../../App.css';
 
 const store = administrationStore;
 
@@ -12,8 +14,8 @@ const AdministrationPage = () => {
             <h2>Administration</h2>
             <div className="Form">
                 <Observer>{() => <div>{store.temp}</div>}</Observer>
-                <button className="Btn" onClick={() => store.increaseTemp()}>Increase</button>
-                <button className="Btn" onClick={() => store.decreaseTemp()}>Decrease</button>
+                <Button type="submit" color="success" onClick={() => store.increaseTemp()}>Increase</Button>
+                <Button type="submit" color="danger" onClick={() => store.decreaseTemp()}>Decrease</Button>
             </div>
         </div>
     )
