@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 import Dashboard from "./components/dashboard/Dashboard";
 import AdministrationPage from "./components/administration/AdministrationPage";
+import { ROUTES } from "./res/constants";
 import './App.css';
 
 const App = () => {
@@ -10,20 +12,16 @@ const App = () => {
       <Router>
         <ul className="App-ul">
           <li>
-            <Link to="/">Dashboard</Link>
+            <Link to={ROUTES.HOME}>Dashboard</Link>
           </li>
           <li>
-            <Link to="/admin">Administration</Link>
+            <Link to={ROUTES.ADMIN}>Administration</Link>
           </li>
         </ul>
 
         <Switch>
-          <Route exact path="/">
-            <Dashboard />
-          </Route>
-          <Route path="/admin">
-            <AdministrationPage /> 
-          </Route>
+          <Route exact path={ROUTES.HOME} component={Dashboard} />
+          <Route path={ROUTES.ADMIN} component={AdministrationPage} />
         </Switch>
       </Router>
     </div>
