@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import DashboardPage from "./components/dashboard/DashboardPage";
+import TopologyListPage from "./components/topologyList/topologyListPage";
 import AdministrationPage from "./components/administration/AdministrationPage";
 import NotFoundPage from "./components/notFound/NotFoundPage";
 import { ROUTES } from "./res/constants";
@@ -16,12 +17,16 @@ const App = () => {
             <Link to={ROUTES.HOME}>Dashboard</Link>
           </li>
           <li>
+            <Link to={ROUTES.LIST}>Topologies</Link>
+          </li>
+          <li>
             <Link to={ROUTES.ADMIN}>Administration</Link>
           </li>
         </ul>
 
         <Switch>
           <Route exact path={ROUTES.HOME} component={DashboardPage} />
+          <Route path={ROUTES.LIST} component={TopologyListPage} />
           <Route path={ROUTES.ADMIN} component={AdministrationPage} />
           <Route path='*' component={NotFoundPage} />
         </Switch>

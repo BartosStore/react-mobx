@@ -14,6 +14,7 @@ const DashboardPage = () => {
             <Row>
                 <Col sm="12" xl={{ size: 6, offset: 3 }}><BarChartData /></Col>
             </Row>
+            <p className="font-weight-asd">asd</p>
         </Container>
     )
 }
