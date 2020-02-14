@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Dashboard from "./components/dashboard/Dashboard";
 import AdministrationPage from "./components/administration/AdministrationPage";
+import NotFoundPage from "./components/notFound/NotFoundPage";
 import { ROUTES } from "./res/constants";
 import './App.css';
 
@@ -22,6 +23,7 @@ const App = () => {
         <Switch>
           <Route exact path={ROUTES.HOME} component={Dashboard} />
           <Route path={ROUTES.ADMIN} component={AdministrationPage} />
+          <Route path='*' component={NotFoundPage} />
         </Switch>
       </Router>
     </div>
