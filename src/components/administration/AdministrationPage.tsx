@@ -16,15 +16,15 @@ const AdministrationPage = () => {
                         <tbody>
                             <tr>
                                 <th>Min temperature</th>
-                                <td>16.0</td>
+                                <td>{store.minTemp.toFixed(1)}</td>
                             </tr>
                             <tr>
                                 <th>Max temperature</th>
-                                <td>30.0</td>
+                                <td>{store.maxTemp.toFixed(1)}</td>
                             </tr>
                             <tr>
                                 <th>Actual temperature</th>
-                                <td><Observer>{() => <div>{store.temp}</div>}</Observer></td>
+                                <td><Observer>{() => <div>{store.temp.toFixed(1)}</div>}</Observer></td>
                             </tr>
                         </tbody>
                     </Table>
