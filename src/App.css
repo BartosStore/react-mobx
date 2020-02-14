@@ -19,6 +19,22 @@
   padding: 0;
 }
 
+.App-ul li {
+  display: inline;
+}
+
+.App li a {
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.App li a:hover {
+  color: navy;
+  text-decoration: underline;
+}
+
 .App-link {
   color: #61dafb;
 }
