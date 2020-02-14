@@ -24,6 +24,7 @@ function prepareBarChartData(data) {
 
 const BarChartData = () => {
   const [barChartData, setBarChartData] = useState(null)
+  const [chartCaption] = useState('System monitoring')
 
   useEffect(() => {
     csv('/static/data/barchart.csv', type).then(data => {
@@ -40,7 +41,7 @@ const BarChartData = () => {
     return <p>Loading...</p>
   }
 
-  return <BarChart data={barChartData} />
+  return <BarChart caption={chartCaption} data={barChartData} />
 }
 
 export default BarChartData;

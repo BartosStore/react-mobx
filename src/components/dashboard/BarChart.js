@@ -10,11 +10,11 @@ const height = 600 - margin.top - margin.bottom
 
 const color = ['#f05440', '#d5433d', '#b33535', '#283250']
 
-const BarChart = ({ data }) => {
+const BarChart = ({ caption, data }) => {
   const d3svg = useRef(null)
 
   useEffect(() => {
-    if (data && d3svg.current) {
+    if (data && d3svg.current && caption) {
       let svg = select(d3svg.current)
 
       const xMax = max(data, d => d.perc)
@@ -36,7 +36,7 @@ const BarChart = ({ data }) => {
         .attr('transform', `translate(0, ${-margin.top / 2})`)
         .append('text')
         .append('tspan')
-        .text('System monitoring')
+        .text(caption)
 
       svg
         .selectAll('.bar')
@@ -65,7 +65,7 @@ const BarChart = ({ data }) => {
         .attr('transform', `translate(${-margin.left / 3},0)`)
         .call(yAxis)
     }
-  }, [data])
+  }, [caption, data])
 
   return (
     <svg
