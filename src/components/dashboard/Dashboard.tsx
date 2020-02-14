@@ -2,7 +2,7 @@ import React from 'react';
 import BarChartData from "./BarChartData";
 import './../../App.css';
 
-const Dashboard = () => {
+const DashboardPage = () => {
     return (
         <div className="App">
             <h2>Dashboard</h2>
@@ -13,4 +13,4 @@ const Dashboard = () => {
     )
 }
 
-export default Dashboard;
+export default DashboardPage;
