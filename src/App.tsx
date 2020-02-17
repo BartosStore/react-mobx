@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import DashboardPage from "./components/dashboard/DashboardPage";
 import TopologyListPage from "./components/topologyList/topologyListPage";
+import ForecastPage from "./components/forecast/ForecastPage";
 import AdministrationPage from "./components/administration/AdministrationPage";
 import NotFoundPage from "./components/notFound/NotFoundPage";
 import { ROUTES } from "./res/constants";
@@ -21,6 +22,7 @@ const App = () => {
           </li>
           <li>
             <Link to={ROUTES.ADMIN}>Administration</Link>
+            <Link to="/forecast">Forecast</Link>
           </li>
         </ul>
 
@@ -28,6 +30,9 @@ const App = () => {
           <Route exact path={ROUTES.HOME} component={DashboardPage} />
           <Route path={ROUTES.LIST} component={TopologyListPage} />
           <Route path={ROUTES.ADMIN} component={AdministrationPage} />
+          <Route path="/forecast">
+            <ForecastPage /> 
+          </Route>
           <Route path='*' component={NotFoundPage} />
         </Switch>
       </Router>
