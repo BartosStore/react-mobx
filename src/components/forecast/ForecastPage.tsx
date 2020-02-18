@@ -1,11 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { owmUrl } from '../../res/constants';
 
+async function fetchWeatherDescription() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({ desc: 'Sunny day.' });
+    }, 250)
+  });
+}
+
+async function logWeatherDescription() {
+  const res = await fetchWeatherDescription();
+  console.log(res);
+}
+
 const ForecastPage = () => {
   const [temp, setTemp] = useState('');
   const [yesterdayTemp, setYesterdayTemp] = useState('');
   const [tomorrowTemp, setTomorrowTemp] = useState('');
   const [city, setCity] = useState('');
+  const [desc, setDesc] = useState('');
 
   useEffect(() => {
     fetch(owmUrl).then((response: any) => {
@@ -29,6 +43,11 @@ const ForecastPage = () => {
       })
       .catch((message) => console.log(message))
       .finally(() => console.log('Promise is done.'));
+
+    fetchWeatherDescription().then((weatherDesc: any) => {
+      setDesc(weatherDesc.desc);
+    });
+    logWeatherDescription();
   })
 
   return (
@@ -36,9 +55,10 @@ const ForecastPage = () => {
       <h2>Forecast</h2>
       <h3>Current weather</h3>
       <div>City: {city}</div>
-      <div>Temperature: {temp} °C</div>
       <div>Yesterday: {yesterdayTemp} °C</div>
       <div>Tomorrow: {tomorrowTemp} °C</div>
+      <div>Temperature: {temp} °C</div>
+      <div>{desc}</div>
     </div>
   )
 }
