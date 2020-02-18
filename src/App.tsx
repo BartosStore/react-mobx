@@ -21,18 +21,18 @@ const App = () => {
             <Link to={ROUTES.LIST}>Topologies</Link>
           </li>
           <li>
+            <Link to={ROUTES.FORECAST}>Forecast</Link>
+          </li>
+          <li>
             <Link to={ROUTES.ADMIN}>Administration</Link>
-            <Link to="/forecast">Forecast</Link>
           </li>
         </ul>
 
         <Switch>
           <Route exact path={ROUTES.HOME} component={DashboardPage} />
           <Route path={ROUTES.LIST} component={TopologyListPage} />
+          <Route path={ROUTES.FORECAST} component={ForecastPage} />
           <Route path={ROUTES.ADMIN} component={AdministrationPage} />
-          <Route path="/forecast">
-            <ForecastPage /> 
-          </Route>
           <Route path='*' component={NotFoundPage} />
         </Switch>
       </Router>
