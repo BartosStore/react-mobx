@@ -49,6 +49,13 @@
   "devDependencies": {
     "@types/react-bootstrap-typeahead": "^3.4.5",
     "@types/reactstrap": "^8.4.1",
-    "node-sass": "4.13.0"
+    "node-sass": "^4.13.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/src/**/*.{js,jsx,ts,tsx}"
+    ]
   }
 }
